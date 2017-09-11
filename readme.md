@@ -26,7 +26,7 @@ test that it's working by running a raw `extract_href`, which should output help
 
 ### example use 
 ```bash
-./extract_href -u https://www.epa.gov/endangered-species/biological-evaluation-chapters-chlorpyrifos-esa-assessment -s '.main-column.clearfix a'
+extract_href -u https://www.epa.gov/endangered-species/biological-evaluation-chapters-chlorpyrifos-esa-assessment -s '.main-column.clearfix a'
 ``` 
 This will fetch the epa.gov url, select all "a" tags in the document that
 are a decendant of any element with the classes "main-column" and "clearfix" and
