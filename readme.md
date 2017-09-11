@@ -1,5 +1,4 @@
 # extract_href
---
 extract_href is a command line tool for extracting urls from a HTML web page.
 writing each url on a new line. Each matched url is:
 
@@ -7,7 +6,7 @@ writing each url on a new line. Each matched url is:
 * unique - (no duplicates are added to the list)
 * refers to a separate resource - (no url fragments)
 
-it uses a jquery-style selector to search the HTML document for elements that
+It uses a jquery-style selector to search the HTML document for elements that
 have an href attribute to construct a de-duplicated list of href attributes It
 has three major command line options:
 
@@ -15,7 +14,17 @@ has three major command line options:
 * **o** - path to output file
 * **s** - (required, default: "a") - jquery-style selector to match html elements
 
-example use: 
+### installation
+
+You will need [go](http://golang.org) installed to build `extract_href` from source. then run:
+
+```bash
+go get -u github.com/datatogether/extract_href
+```
+
+test that it's working by running a raw `extract_href`, which should output help text.
+
+### example use 
 ```bash
 ./extract_href -u https://www.epa.gov/endangered-species/biological-evaluation-chapters-chlorpyrifos-esa-assessment -s '.main-column.clearfix a'
 ``` 

@@ -188,7 +188,7 @@ Each matched url is:
  * unique - (no duplicates are added to the list)
  * refers to a separate resource - (no url fragments)
 
-extract_url uses a jquery-style selector to search the HTML document for elements that have an href attribute
+extract_href uses a jquery-style selector to search the HTML document for elements that have an href attribute
 to construct a de-duplicated list of href attributes.
 
 options:`)
