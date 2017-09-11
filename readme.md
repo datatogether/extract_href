@@ -3,23 +3,23 @@
 extract_href is a command line tool for extracting urls from a HTML web page.
 writing each url on a new line. Each matched url is:
 
-    * absolute (referenced by source url)
-    * unique - (no duplicates are added to the list)
-    * refers to a separate resource - (no url fragments)
+* absolute (referenced by source url)
+* unique - (no duplicates are added to the list)
+* refers to a separate resource - (no url fragments)
 
 it uses a jquery-style selector to search the HTML document for elements that
 have an href attribute to construct a de-duplicated list of href attributes It
 has three major command line options:
 
-    * u - (required) url of html document
-    * o - path to output file
-    * s - (required, default: "a") - jquery-style selector to match html elements
+* **u** - (required) url of html document
+* **o** - path to output file
+* **s** - (required, default: "a") - jquery-style selector to match html elements
 
-example use: ```
-
-    ./extract_href -u https://www.epa.gov/endangered-species/biological-evaluation-chapters-chlorpyrifos-esa-assessment -s '.main-column.clearfix a'
-
-``` this will fetch the epa.gov url, select all "a" tags in the document that
+example use: 
+```bash
+./extract_href -u https://www.epa.gov/endangered-species/biological-evaluation-chapters-chlorpyrifos-esa-assessment -s '.main-column.clearfix a'
+``` 
+This will fetch the epa.gov url, select all "a" tags in the document that
 are a decendant of any element with the classes "main-column" and "clearfix" and
 build a deduplicated list of absolute urls using the `href` attribute of all
 found anchor tags. run that same command adding `-o urls.txt` to save the
